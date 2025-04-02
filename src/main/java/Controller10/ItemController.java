@@ -1,7 +1,7 @@
 package Controller10;
 
-import DTO.ItemRequest;
-import DTO.ItemResponse;
+import DTO.Request.ItemRequest;
+import DTO.Response.ItemResponse;
 import Entity.ItemEntity;
 import Service.CartService;
 import Service.ItemService;
@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-public class HomeController {
+public class ItemController {
     @Autowired
     private UserService userService;
     @Autowired
@@ -58,6 +58,11 @@ public class HomeController {
         ItemResponse itemResponse = itemService.fixItem(item,id);
         System.out.println(itemResponse);
         return itemResponse;
+    }
+
+    @DeleteMapping("/item/{id}")
+    public void delete(@PathVariable int id){
+        itemService.delete(id);
     }
 
 }

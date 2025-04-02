@@ -1,4 +1,4 @@
-package DTO;
+package DTO.Response;
 
 
 import lombok.Data;
